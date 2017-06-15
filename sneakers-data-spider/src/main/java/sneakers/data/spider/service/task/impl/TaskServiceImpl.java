@@ -25,7 +25,8 @@ public class TaskServiceImpl implements TaskService {
     @Value("${fightclub_release_url}")
     private String FIGHTCLUB_RELEASE_URL;
 
-    @Scheduled(cron = "0 0 1 * * ?") // 每天凌晨1点执行
+    // @Scheduled(cron = "0 0 1 * * ?") // 每天凌晨1点执行
+    @Scheduled(cron = "0 0/30 * * * *")
     @Override
     public void taskFightCloudPage() {
         LOG.info("==================== TASK FIGHTCLOUD START====================");

@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.solr.core.mapping.Indexed;
 import org.springframework.data.solr.core.mapping.SolrDocument;
 
-@SolrDocument(solrCoreName = "sneakers_index")
+@SolrDocument(solrCoreName = "sneakers_index1")
 public class PageInfo {
 
     public PageInfo() {}

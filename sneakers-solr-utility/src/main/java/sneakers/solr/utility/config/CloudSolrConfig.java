@@ -1,5 +1,6 @@
 package sneakers.solr.utility.config;
 
+import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +25,7 @@ public class CloudSolrConfig {
     private int connectTimeout;
 
     @Bean
-    public CloudSolrClient cloudSolrClient() {
+    public SolrClient solrClient() {
         try {
             CloudSolrClient cloudSolrClient = new CloudSolrClient(zkHost);
             cloudSolrClient.setZkClientTimeout(clientTimeout);
