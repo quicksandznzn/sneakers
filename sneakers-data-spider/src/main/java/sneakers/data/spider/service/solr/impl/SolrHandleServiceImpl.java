@@ -1,4 +1,4 @@
-package sneakers.solr.utility.service.impl;
+package sneakers.data.spider.service.solr.impl;
 
 import java.util.List;
 
@@ -8,9 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import sneakers.common.api.model.PageInfo;
-import sneakers.solr.utility.repository.SolrHandleRepository;
-import sneakers.solr.utility.service.SolrHandleService;
-
+import sneakers.data.spider.repository.SolrHandleRepository;
+import sneakers.data.spider.service.solr.SolrHandleService;
 
 @Service
 public class SolrHandleServiceImpl implements SolrHandleService {

@@ -1,4 +1,4 @@
-package sneakers.solr.utility.config;
+package sneakers.data.spider.config;
 
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.impl.CloudSolrClient;
@@ -7,10 +7,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.solr.repository.config.EnableSolrRepositories;
 
+/**
+ * 
+ * @author quicksandzn@gmail.com
+ *
+ *         init cloudsolr
+ */
 @Configuration
-@EnableSolrRepositories(basePackages = {"sneakers.solr.utility"}, multicoreSupport = true)
+// @EnableSolrRepositories(basePackages = {"sneakers.data.spider"}, multicoreSupport = true)
 public class CloudSolrConfig {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CloudSolrConfig.class);

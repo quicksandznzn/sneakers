@@ -4,14 +4,15 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.solr.core.mapping.Indexed;
 import org.springframework.data.solr.core.mapping.SolrDocument;
 
-@SolrDocument(solrCoreName = "sneakers_index1")
+@SolrDocument(solrCoreName = "sneakers_index")
 public class PageInfo {
 
     public PageInfo() {}
 
-    public PageInfo(String title, String itemNum, String releaseDate, String releasePrice,
-            String imgPath, String pageUrl, String jumpUrl) {
+    public PageInfo(String id, String title, String itemNum, String releaseDate,
+            String releasePrice, String imgPath, String pageUrl, String jumpUrl) {
         super();
+        this.id = id;
         this.title = title;
         this.itemNum = itemNum;
         this.releaseDate = releaseDate;
@@ -21,7 +22,7 @@ public class PageInfo {
         this.jumpUrl = jumpUrl;
     }
 
-    private @Id @Indexed Integer id;
+    private @Id @Indexed String id;
 
     private @Indexed String title;
 
@@ -85,11 +86,11 @@ public class PageInfo {
         this.pageUrl = pageUrl;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

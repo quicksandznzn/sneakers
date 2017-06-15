@@ -2,6 +2,7 @@ package sneakers.data.spider.service.spider.impl;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -23,6 +24,9 @@ public class SpiderPageServiceImpl implements SpiderPageService {
 
     private static final Logger LOG = LoggerFactory.getLogger(SpiderPageServiceImpl.class);
 
+    /**
+     * html to pageinfo about
+     */
     private static final String IMG_CLASS = "i_pic";
     private static final String IMG_TAG = "img";
     private static final String IMG_SRC = "src";
@@ -42,6 +46,9 @@ public class SpiderPageServiceImpl implements SpiderPageService {
     @Value("${img_save_path}")
     private String IMG_SAVE_PATH;
 
+    /**
+     * spider http://www.fightclub.cn
+     */
     @Override
     public List<PageInfo> spiderFightClubReleasePage(String pageUrl) {
         List<PageInfo> pageInfoList = Lists.newArrayList();
@@ -50,6 +57,7 @@ public class SpiderPageServiceImpl implements SpiderPageService {
             Document document = Jsoup.connect(pageUrl).get();
             Elements elements = document.getElementsByClass("pitem");
             for (int i = 0; i < elements.size(); i++) {
+                String id = UUID.randomUUID().toString();
                 String itemNum = "";
                 String releaseDate = "";
                 String releasePrice = "";
@@ -74,8 +82,8 @@ public class SpiderPageServiceImpl implements SpiderPageService {
                     releasePrice = elements.get(i).select(RELEASEPRICE_SELECT).text();
                     releasePrice = releasePrice.replace(RELEASEPRICE_REPLACE, BLANK).trim();
                 }
-                pageInfoList.add(new PageInfo(title, itemNum, releaseDate, releasePrice, imgPath,
-                        pageUrl, jumpUrl));
+                pageInfoList.add(new PageInfo(id, title, itemNum, releaseDate, releasePrice,
+                        imgPath, pageUrl, jumpUrl));
             }
         } catch (IOException e) {
             LOG.error("SPIDER FIGHTCLUBPAGE INTERFACE ERROR ========", e);

@@ -8,11 +8,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SneakersDataSpiderApplication {
 
-    private static final Logger log = LoggerFactory.getLogger(SneakersDataSpiderApplication.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SneakersDataSpiderApplication.class);
 
     public static void main(String[] args) {
+
         SpringApplication.run(SneakersDataSpiderApplication.class, args);
-        log.info(
+
+        LOG.info(
                 "====================== SNEAKERS DATA SPIDER APPLICATION START ======================");
     }
 

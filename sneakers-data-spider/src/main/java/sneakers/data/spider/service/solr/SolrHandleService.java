@@ -1,4 +1,4 @@
-package sneakers.solr.utility.service;
+package sneakers.data.spider.service.solr;
 
 import java.util.List;
 
