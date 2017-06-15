@@ -8,12 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SneakersSearchIndexMainApplication {
 
-    private static final Logger log =
+    private static final Logger LOG =
             LoggerFactory.getLogger(SneakersSearchIndexMainApplication.class);
 
     public static void main(String[] args) {
         SpringApplication.run(SneakersSearchIndexMainApplication.class, args);
-        log.info(
+        LOG.info(
                 "====================== SNEAKERS SEARCH INDEX MAIN APPLICATION START ======================");
     }
 

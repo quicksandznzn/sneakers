@@ -11,8 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import sneakers.common.api.model.PageInfo;
 import sneakers.sneakers.index.main.field.SolrField;
-import sneakers.solr.utility.service.SolrHandleService;
+import sneakers.sneakers.index.main.service.solr.SolrHandleService;
 
+/**
+ * 
+ * @author quicksandzn@gmail.com
+ *
+ *         sneakers index entrance
+ */
 @RestController
 public class SneakersIndexController {
 
