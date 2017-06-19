@@ -26,7 +26,7 @@ public class TaskServiceImpl implements TaskService {
     private String FIGHTCLUB_RELEASE_URL;
 
     // @Scheduled(cron = "0 0 1 * * ?") // 01:00 start
-    @Scheduled(cron = "0/30 * * * * *")
+    @Scheduled(cron = "0/50 * * * * *")
     @Override
     public void taskFightCloudPage() {
         LOG.info("==================== TASK FIGHTCLOUD START====================");

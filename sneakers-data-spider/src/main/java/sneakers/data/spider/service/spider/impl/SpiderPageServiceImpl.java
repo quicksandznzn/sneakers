@@ -16,8 +16,6 @@ import com.google.common.collect.Lists;
 
 import sneakers.common.api.model.PageInfo;
 import sneakers.data.spider.service.spider.SpiderPageService;
-import sneakers.data.spider.util.FileUtil;
-import sneakers.data.spider.util.ImageUtil;
 
 @Service
 public class SpiderPageServiceImpl implements SpiderPageService {
@@ -53,7 +51,7 @@ public class SpiderPageServiceImpl implements SpiderPageService {
     public List<PageInfo> spiderFightClubReleasePage(String pageUrl) {
         List<PageInfo> pageInfoList = Lists.newArrayList();
         try {
-            boolean flag = FileUtil.deleteFile(IMG_SAVE_PATH);
+            // boolean flag = FileUtil.deleteFile(IMG_SAVE_PATH);
             Document document = Jsoup.connect(pageUrl).get();
             Elements elements = document.getElementsByClass("pitem");
             for (int i = 0; i < elements.size(); i++) {
@@ -66,9 +64,9 @@ public class SpiderPageServiceImpl implements SpiderPageService {
                         .getElementsByTag(IMG_TAG).attr(IMG_SRC);
                 imgPath = imgPath.replace(IMG_REPLACE, BLANK);
                 imgPath = URL_PREFIX + imgPath;
-                if (flag) {
-                    ImageUtil.download(imgPath, title + IMG_SUFFIX, IMG_SAVE_PATH);
-                }
+                // if (flag) {
+                // ImageUtil.download(imgPath, title + IMG_SUFFIX, IMG_SAVE_PATH);
+                // }
                 int divNum = elements.get(i).getElementsByClass("i_introtext").get(0)
                         .getElementsByTag("div").size();
                 String jumpUrl = elements.get(i).select(TITLE_CLASS).get(0).getElementsByTag("a")

@@ -1,11 +1,15 @@
 package sneakers.common.api.model;
 
+import java.io.Serializable;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.solr.core.mapping.Indexed;
 import org.springframework.data.solr.core.mapping.SolrDocument;
 
 @SolrDocument(solrCoreName = "sneakers_index")
-public class PageInfo {
+public class PageInfo implements Serializable {
+
+    private static final long serialVersionUID = 7906071656568524724L;
 
     public PageInfo() {}
 
