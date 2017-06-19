@@ -38,11 +38,6 @@
 			<artifactId>spring-boot-starter-dubbo</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-		<dependency>
-			<groupId>springboot-dubbo-api</groupId>
-			<artifactId>springboot-dubbo-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 	
 	<build>
