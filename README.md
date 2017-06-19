@@ -1,8 +1,5 @@
 # SNEAKERS
 
-spider about sneakers website 
+spider about sneakers website and show
 
 
--------- by the way
-
-this code is shit,i will edit this
