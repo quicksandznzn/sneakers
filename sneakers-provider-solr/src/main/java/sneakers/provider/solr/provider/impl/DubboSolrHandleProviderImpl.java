@@ -17,10 +17,12 @@ public class DubboSolrHandleProviderImpl implements SolrHandleProvider {
     @Autowired
     private SolrHandleService solrHandleService;
 
+    @Override
     public void savePageInfo(List<PageInfo> list) {
         solrHandleService.savePageInfo(list);
     }
 
+    @Override
     public void deleteAll() {
         solrHandleService.deleteAll();
     }

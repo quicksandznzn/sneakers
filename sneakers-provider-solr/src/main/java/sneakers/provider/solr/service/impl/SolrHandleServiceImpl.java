@@ -34,11 +34,13 @@ public class SolrHandleServiceImpl implements SolrHandleService {
     @Value("${sneakers_collection}")
     private String SNEAKERS_COLLECTION;
 
+    @Override
     public void savePageInfo(List<PageInfo> list) {
         solrHandleRepository.save(list);
 
     }
 
+    @Override
     public void deleteAll() {
         solrHandleRepository.deleteAll();
 
